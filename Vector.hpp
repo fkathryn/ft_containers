@@ -6,7 +6,7 @@
 #define VECTOR_HPP
 
 #include <iostream>
-#include "VectorIterator.hpp"
+#include "Iterator.hpp"
 
 namespace ft {
 	template<class T, class Alloc = std::allocator<T> >
@@ -21,8 +21,8 @@ namespace ft {
 		typedef size_t size_type;
 		typedef ptrdiff_t difference_type;
 
-		typedef VectorIterator<value_type,allocator_type>	iterator;
-		typedef VectorConstIterator<value_type,allocator_type>	const_iterator;
+		typedef Iterator<value_type,allocator_type>	iterator;
+		typedef ConstIterator<value_type,allocator_type>	const_iterator;
 		typedef std::reverse_iterator<iterator> reverse_iterator;
 		typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 	public:
