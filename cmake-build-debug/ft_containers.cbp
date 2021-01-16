@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/fkathryn/Desktop/ft_containers/ConstListIterator.hpp">
-			<Option target="ft_containers"/>
-		</Unit>
 		<Unit filename="/Users/fkathryn/Desktop/ft_containers/List.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
