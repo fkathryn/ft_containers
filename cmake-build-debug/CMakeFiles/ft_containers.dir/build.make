@@ -99,6 +99,9 @@ ft_containers_EXTERNAL_OBJECTS =
 
 ft_containers: CMakeFiles/ft_containers.dir/main.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/build.make
+ft_containers: lib/libgtestd.a
+ft_containers: lib/libgtest_maind.a
+ft_containers: lib/libgtestd.a
 ft_containers: CMakeFiles/ft_containers.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fkathryn/Desktop/ft_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ft_containers"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_containers.dir/link.txt --verbose=$(VERBOSE)

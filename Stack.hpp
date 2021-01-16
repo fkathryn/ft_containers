@@ -25,24 +25,23 @@ namespace ft {
 		void push(const value_type& val) { return this->_container.push_back(val); };
 		void pop() { this->_container.pop_back(); };
 
-
-		explicit stack(const container_type & container = container_type()) { this->_container = container; };
-
+		explicit stack(const container_type & containerType = container_type()) : _container(containerType) {};
+		~stack() {};
 	private:
 		container_type _container;
 	};
 	template <class T, class Container>
-		bool operator==(const stack<T,Container>& lhs, const stack<T,Container>& rhs);
+	bool operator==(const stack<T,Container>& lhs, const stack<T,Container>& rhs) {return lhs._container == rhs._container; };
 	template <class T, class Container>
-		bool operator!=(const stack<T,Container>& lhs, const stack<T,Container>& rhs);
+	bool operator!=(const stack<T,Container>& lhs, const stack<T,Container>& rhs) {return lhs._container != rhs._container; };
 	template <class T, class Container>
-		bool operator<(const stack<T,Container>& lhs, const stack<T,Container>& rhs);
+	bool operator<(const stack<T,Container>& lhs, const stack<T,Container>& rhs) {return lhs._container < rhs._container; };
 	template <class T, class Container>
-		bool operator<=(const stack<T,Container>& lhs, const stack<T,Container>& rhs);
+	bool operator<=(const stack<T,Container>& lhs, const stack<T,Container>& rhs) {return lhs._container <= rhs._container; };
 	template <class T, class Container>
-		bool operator>(const stack<T,Container>& lhs, const stack<T,Container>& rhs);
+	bool operator>(const stack<T,Container>& lhs, const stack<T,Container>& rhs) {return lhs._container > rhs._container; };
 	template <class T, class Container>
-		bool operator>=(const stack<T,Container>& lhs, const stack<T,Container>& rhs);
+	bool operator>=(const stack<T,Container>& lhs, const stack<T,Container>& rhs) {return lhs._container >= rhs._container; };
 }
 
 #endif //STACK_HPP
