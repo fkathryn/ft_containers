@@ -10,16 +10,38 @@
 
 template <class T, class Alloc = std::allocator<T> >
 class ListIterator : public std::iterator<std::bidirectional_iterator_tag, T> {
+	// types:
+	typedef T value_type;
+	typedef Alloc allocator_type;
+	typedef typename allocator_type::reference reference;
+	typedef typename allocator_type::const_reference const_reference;
+	typedef typename allocator_type::pointer pointer;
+	typedef typename allocator_type::const_pointer const_pointer;
+	typedef size_t size_type;
+	typedef ptrdiff_t difference_type;
 public:
-	ListIterator() { this->_it = nullptr; };
-	ListIterator(const ListIterator &it) { *this = it; }
-	ListIterator &operator=(const ListIterator &it) {};
-	~ListIterator() {};
+	ListIterator();
+	ListIterator(const ListIterator &it);
+	ListIterator &operator=(const ListIterator &it);
+	~ListIterator();
 
-	ListIterator(T *it) { this->_it = it; }
-	bool operator==(const ListIterator &it) { return this->_it == it._it; };
-	bool operator!=(const ListIterator &it) { return this->_it != it._it; };
-	T &operator*() { return *(this->_it); }
+	bool operator==(const ListIterator &it);
+	bool operator!=(const ListIterator &it);
+	T & operator*() const;
+private:
+};
+
+template <class T, class Alloc = std::allocator<T> >
+class ListConstIterator : public std::iterator<std::bidirectional_iterator_tag, T> {
+public:
+	ListConstIterator();
+	ListConstIterator(const ListConstIterator &it);
+	ListConstIterator &operator=(const ListConstIterator &it);
+	~ListConstIterator();
+
+	bool operator==(const ListConstIterator &it);
+	bool operator!=(const ListConstIterator &it);
+	T & operator*() const;
 private:
 
 };
