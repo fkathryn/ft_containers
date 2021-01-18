@@ -6,6 +6,7 @@
 #include <stack>
 #include <vector>
 
+
 TEST(BasicStack, TestStack) {
 	ft::stack<std::string> str;
 	std::stack<std::string> strStd;
@@ -15,12 +16,41 @@ TEST(BasicStack, TestStack) {
 }
 
 TEST(BasicVector, TestVector) {
-	ft::vector<int> v1(1, 5);
-	std::vector<int> vStd(1, 5);
+	//----------default constructor----------
+	ft::vector<int> sas;
+	sas.push_back(1);
+	std::cout << sas.size() << std::endl;
+	std::cout << sas.capacity() << std::endl;
+	//----------fill constructor----------
+	ft::vector<int> v1(38, 1);
+	std::vector<int> vStd1(38, 1);
+	for (int i = 0; i < v1.size(); i++)
+		EXPECT_EQ(v1.at(i), vStd1.at(i));
+	EXPECT_EQ(v1.size(), vStd1.size());
 
-	EXPECT_EQ(v1.empty(), vStd.empty());
-//	EXPECT_EQ(v1.max_size(), vStd.max_size());
-	EXPECT_EQ(v1.at(5), vStd.at(5));
+	//----------range constructor----------
+	std::vector<int> vStd2(10, 5);
+	for (int i = 10; i >= 0; --i)
+		vStd2.push_back(i);
+	ft::vector<int> v2(vStd2.begin(), vStd2.end());
+	v2.begin();
+	EXPECT_EQ(v2.empty(), vStd2.empty());
+	EXPECT_EQ(v2.max_size(), vStd2.max_size());
+	for (int i = 0; i < v2.size(); i++)
+		EXPECT_EQ(v2.at(i), vStd2.at(i));
+	//-----------copy constructor----------
+	ft::vector<int> std(21, 42);
+	ft::vector<int> my(std);
+	//----------resize----------
+	v2.resize(3);
+	vStd2.resize(3);
+	EXPECT_EQ(v2.size(), vStd2.size());
+	//----------assign----------
+	v2.assign(20, 42);
+	vStd2.assign(20, 42);
+	for (int i = 0; i != v2.size(); i++)
+		EXPECT_EQ(v2.at(i), vStd2.at(i));
+
 }
 
 int main(int argc, char **argv) {

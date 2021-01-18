@@ -25,14 +25,20 @@ public:
 	~Iterator() {}
 
 	pointer getIt() const { return this->_it; }
-
-	Iterator& operator++() { this->_it++; return *this; }
+	reference operator*() { return *this->_it; }
+	Iterator& operator++() {
+		this->_it++;
+		return *this;
+	}
 	Iterator operator++(int) {
 		Iterator tmp(getIt());
 		this->_it = _it + 1;
 		return tmp;
 	}
-	Iterator& operator--() { this->_it--; return *this; }
+	Iterator& operator--() {
+		this->_it--;
+		return *this;
+	}
 	Iterator operator--(int) {
 		Iterator tmp(getIt());
 		this->_it = _it - 1;
@@ -60,14 +66,19 @@ public:
 	~ConstIterator() {}
 
 	pointer getIt() const { return this->_it; }
-
-	ConstIterator& operator++() { this->_it++; return *this; }
+	ConstIterator& operator++() {
+		this->_it++;
+		return *this;
+	}
 	ConstIterator operator++(int) {
 		ConstIterator tmp(getIt());
 		this->_it = _it + 1;
 		return tmp;
 	}
-	ConstIterator& operator--() { this->_it--; return *this; }
+	ConstIterator& operator--() {
+		this->_it--;
+		return *this;
+	}
 	ConstIterator operator--(int) {
 		ConstIterator tmp(getIt());
 		this->_it = _it - 1;
