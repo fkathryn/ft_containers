@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="ft_containers" targetName="ft_containers" />
+      <config projectName="ft_containers" targetName="gmock" />
+      <config projectName="ft_containers" targetName="gtest_main" />
+      <config projectName="ft_containers" targetName="gtest" />
+      <config projectName="ft_containers" targetName="gmock_main" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d90a1228-02cb-4d7b-8414-8633f9a44ab2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Iterator.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Iterator.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vector.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Vector.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_containers.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_containers.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ft_containers" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ft_containers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/googletest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mvHKLboaUtdH4d6Dc5w547IEwh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager" selected="Google Test.BasicVector.TestVector">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicName.TestStack" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicName" TEST_METHOD="TestStack" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicStack.TestStack" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicStack" TEST_METHOD="TestStack" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicVector.TestVector" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicVector" TEST_METHOD="TestVector" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Google Test.BasicName.TestStack" />
+      <item itemvalue="Google Test.BasicStack.TestStack" />
+      <item itemvalue="Google Test.BasicVector.TestVector" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Google Test.BasicVector.TestVector" />
+        <item itemvalue="Google Test.BasicStack.TestStack" />
+        <item itemvalue="Google Test.BasicName.TestStack" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d90a1228-02cb-4d7b-8414-8633f9a44ab2" name="Default Changelist" comment="" />
+      <created>1610367080471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610367080471</updated>
+      <workItem from="1610367084259" duration="3033000" />
+      <workItem from="1610442378902" duration="657000" />
+      <workItem from="1610468908496" duration="3579000" />
+      <workItem from="1610724296653" duration="13189000" />
+      <workItem from="1610790734784" duration="13619000" />
+      <workItem from="1610883067924" duration="4112000" />
+      <workItem from="1610898835157" duration="5844000" />
+      <workItem from="1610962902991" duration="217000" />
+      <workItem from="1610966842242" duration="4274000" />
+      <workItem from="1610992655235" duration="345000" />
+      <workItem from="1610999583526" duration="3730000" />
+      <workItem from="1611047531181" duration="4723000" />
+      <workItem from="1611059316827" duration="4417000" />
+      <workItem from="1611083540189" duration="3208000" />
+      <workItem from="1611090606052" duration="5890000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1381" y="381" key="#New_File_Extensions" timestamp="1610806431283">
+      <screen x="0" y="23" width="2560" height="1387" />
+    </state>
+    <state x="1381" y="381" key="#New_File_Extensions/0.23.2560.1387@0.23.2560.1387" timestamp="1610806431283" />
+    <state x="1312" y="378" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610795745055">
+      <screen x="0" y="23" width="2560" height="1387" />
+    </state>
+    <state x="1312" y="378" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1387@0.23.2560.1387" timestamp="1610795745055" />
+    <state x="1519" y="470" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610791005640">
+      <screen x="0" y="23" width="2560" height="1387" />
+    </state>
+    <state x="1519" y="470" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1387@0.23.2560.1387" timestamp="1610791005640" />
+    <state width="1588" height="366" key="GridCell.Tab.0.bottom" timestamp="1611098388120">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="366" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388120" />
+    <state width="1502" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050657" />
+    <state width="1588" height="366" key="GridCell.Tab.0.center" timestamp="1611098388119">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="366" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388119" />
+    <state width="1502" height="375" key="GridCell.Tab.0.center/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050656" />
+    <state width="1588" height="366" key="GridCell.Tab.0.left" timestamp="1611098388119">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="366" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388119" />
+    <state width="1502" height="375" key="GridCell.Tab.0.left/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050656" />
+    <state width="1588" height="366" key="GridCell.Tab.0.right" timestamp="1611098388120">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="366" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388120" />
+    <state width="1502" height="375" key="GridCell.Tab.0.right/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050656" />
+    <state width="1588" height="385" key="GridCell.Tab.1.bottom" timestamp="1611096145597">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="385" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145597" />
+    <state width="1982" height="363" key="GridCell.Tab.1.bottom/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833109" />
+    <state width="1588" height="385" key="GridCell.Tab.1.center" timestamp="1611096145596">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="385" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145596" />
+    <state width="1982" height="363" key="GridCell.Tab.1.center/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833108" />
+    <state width="1588" height="385" key="GridCell.Tab.1.left" timestamp="1611096145596">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="385" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145596" />
+    <state width="1982" height="363" key="GridCell.Tab.1.left/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833108" />
+    <state width="1588" height="385" key="GridCell.Tab.1.right" timestamp="1611096145596">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1588" height="385" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145596" />
+    <state width="1982" height="363" key="GridCell.Tab.1.right/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833108" />
+    <state x="1297" y="355" key="SettingsEditor" timestamp="1610808929663">
+      <screen x="0" y="23" width="2560" height="1387" />
+    </state>
+    <state x="1297" y="355" key="SettingsEditor/0.23.2560.1387@0.23.2560.1387" timestamp="1610808929663" />
+    <state x="1381" y="456" key="Vcs.Push.Dialog.v2" timestamp="1610367413078">
+      <screen x="0" y="23" width="2560" height="1387" />
+    </state>
+    <state x="1381" y="456" key="Vcs.Push.Dialog.v2/0.23.2560.1387@0.23.2560.1387" timestamp="1610367413078" />
+  </component>
+</project>
