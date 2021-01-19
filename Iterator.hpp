@@ -26,6 +26,9 @@ public:
 
 	pointer getIt() const { return this->_it; }
 	reference operator*() { return *this->_it; }
+	bool operator==(const Iterator &other) { return this->_it == other._it; }
+	bool operator!=(const Iterator &other) { return this->_it != other._it; }
+	T &operator[](std::ptrdiff_t n) { return (*(*this + n)); }
 	Iterator& operator++() {
 		this->_it++;
 		return *this;
