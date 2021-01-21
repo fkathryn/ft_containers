@@ -38,6 +38,11 @@ TEST(BasicVector, TestVector) {
 	for (int i = 0; i < vStd2.size(); i++)
 		EXPECT_EQ(v2.at(i), vStd2.at(i));
 
+	//----------resize----------
+//	v2.resize(23, 21);
+//	vStd2.resize(23, 21);
+//	EXPECT_EQ(v2.size(), vStd2.size());
+
 	//-----------erase-----------
 	std::cout << "my: " << v2.size() << std::endl;
 	std::cout <<vStd2.size() << std::endl;
@@ -45,18 +50,16 @@ TEST(BasicVector, TestVector) {
 		EXPECT_EQ(v2.at(i), vStd2.at(i));
 		std::cout << v2.at(i) << std::endl;
 	}
+	v2.erase(v2.begin() + 15);
 	for (int i = 0; i < v2.size(); i++) {
-		std::cout <<  "erase: " << i << v2.at(i) << std::endl;
+		std::cout <<  "erase: i = " << i  << " - " << v2.at(i) << std::endl;
 	}
 	//-----------copy constructor----------
 	ft::vector<int> std(21, 42);
 	ft::vector<int> my(std);
 	for (int i = 0; i < my.size(); i++)
 		EXPECT_EQ(my.at(i), std.at(i));
-	//----------resize----------
-	v2.resize(3);
-	vStd2.resize(3);
-	EXPECT_EQ(v2.size(), vStd2.size());
+
 //	//----------assign----------
 	v2.assign(20, 42);
 	vStd2.assign(20, 42);

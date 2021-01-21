@@ -17,11 +17,11 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="ft_containers" targetName="ft_containers" />
-      <config projectName="ft_containers" targetName="gmock" />
-      <config projectName="ft_containers" targetName="gtest_main" />
-      <config projectName="ft_containers" targetName="gmock_main" />
       <config projectName="ft_containers" targetName="gtest" />
+      <config projectName="ft_containers" targetName="ft_containers" />
+      <config projectName="ft_containers" targetName="gmock_main" />
+      <config projectName="ft_containers" targetName="gtest_main" />
+      <config projectName="ft_containers" targetName="gmock" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -31,11 +31,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90a1228-02cb-4d7b-8414-8633f9a44ab2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ft_containers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ft_containers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iterator.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Iterator.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Queue.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stack.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vector.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Vector.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_containers.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_containers.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ft_containers" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ft_containers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,16 +61,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.advertisement.text.has.clang-format" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Google Test.BasicVector.TestVector">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BasicName.TestStack" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ft_containers" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ft_containers" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicName" TEST_METHOD="TestStack" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -106,19 +105,14 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Google Test.BasicName.TestStack" />
+      <item itemvalue="Google Test.BasicStack.TestStack" />
+      <item itemvalue="Google Test.BasicVector.TestVector" />
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
-      <item itemvalue="Google Test.BasicName.TestStack" />
-      <item itemvalue="Google Test.BasicStack.TestStack" />
-      <item itemvalue="Google Test.BasicVector.TestVector" />
     </list>
     <recent_temporary>
       <list>
@@ -151,6 +145,9 @@
       <workItem from="1611059316827" duration="4417000" />
       <workItem from="1611083540189" duration="3208000" />
       <workItem from="1611090606052" duration="6972000" />
+      <workItem from="1611148862556" duration="1819000" />
+      <workItem from="1611155181608" duration="3421000" />
+      <workItem from="1611172336614" duration="8092000" />
     </task>
     <servers />
   </component>
@@ -197,45 +194,45 @@
       <screen x="0" y="23" width="2560" height="1387" />
     </state>
     <state x="1519" y="470" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1387@0.23.2560.1387" timestamp="1610791005640" />
-    <state width="1588" height="366" key="GridCell.Tab.0.bottom" timestamp="1611098388120">
+    <state width="1608" height="366" key="GridCell.Tab.0.bottom" timestamp="1611164405262">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="366" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388120" />
+    <state width="1608" height="366" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1611164405262" />
     <state width="1502" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050657" />
-    <state width="1588" height="366" key="GridCell.Tab.0.center" timestamp="1611098388119">
+    <state width="1608" height="366" key="GridCell.Tab.0.center" timestamp="1611164405261">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="366" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388119" />
+    <state width="1608" height="366" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1611164405261" />
     <state width="1502" height="375" key="GridCell.Tab.0.center/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050656" />
-    <state width="1588" height="366" key="GridCell.Tab.0.left" timestamp="1611098388119">
+    <state width="1608" height="366" key="GridCell.Tab.0.left" timestamp="1611164405261">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="366" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388119" />
+    <state width="1608" height="366" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1611164405261" />
     <state width="1502" height="375" key="GridCell.Tab.0.left/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050656" />
-    <state width="1588" height="366" key="GridCell.Tab.0.right" timestamp="1611098388120">
+    <state width="1608" height="366" key="GridCell.Tab.0.right" timestamp="1611164405261">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="366" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1611098388120" />
+    <state width="1608" height="366" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1611164405261" />
     <state width="1502" height="375" key="GridCell.Tab.0.right/0.23.2560.1387@0.23.2560.1387" timestamp="1610973050656" />
-    <state width="1588" height="385" key="GridCell.Tab.1.bottom" timestamp="1611096145597">
+    <state width="1608" height="385" key="GridCell.Tab.1.bottom" timestamp="1611160835402">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="385" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145597" />
+    <state width="1608" height="385" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1611160835402" />
     <state width="1982" height="363" key="GridCell.Tab.1.bottom/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833109" />
-    <state width="1588" height="385" key="GridCell.Tab.1.center" timestamp="1611096145596">
+    <state width="1608" height="385" key="GridCell.Tab.1.center" timestamp="1611160835401">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="385" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145596" />
+    <state width="1608" height="385" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1611160835401" />
     <state width="1982" height="363" key="GridCell.Tab.1.center/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833108" />
-    <state width="1588" height="385" key="GridCell.Tab.1.left" timestamp="1611096145596">
+    <state width="1608" height="385" key="GridCell.Tab.1.left" timestamp="1611160835401">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="385" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145596" />
+    <state width="1608" height="385" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1611160835401" />
     <state width="1982" height="363" key="GridCell.Tab.1.left/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833108" />
-    <state width="1588" height="385" key="GridCell.Tab.1.right" timestamp="1611096145596">
+    <state width="1608" height="385" key="GridCell.Tab.1.right" timestamp="1611160835401">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1588" height="385" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1611096145596" />
+    <state width="1608" height="385" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1611160835401" />
     <state width="1982" height="363" key="GridCell.Tab.1.right/0.23.2560.1387@0.23.2560.1387" timestamp="1610906833108" />
     <state x="1297" y="355" key="SettingsEditor" timestamp="1610808929663">
       <screen x="0" y="23" width="2560" height="1387" />

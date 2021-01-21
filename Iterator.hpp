@@ -26,9 +26,7 @@ public:
 
 	pointer getIt() const { return this->_it; }
 	reference operator*() { return *this->_it; }
-	bool operator==(const Iterator & it) { return this->_it == it._it; }
-	bool operator!=(const Iterator & it) { return this->_it != it._it; }
-	T &operator[](std::ptrdiff_t n) { return (*(*this + n)); }
+
 	Iterator& operator++() {
 		this->_it++;
 		return *this;
@@ -47,6 +45,21 @@ public:
 		this->_it = _it - 1;
 		return tmp;
 	}
+	Iterator operator+(difference_type val) const { return Iterator(this->_it + val); };
+	Iterator operator-(difference_type val) const { return Iterator(this->_it - val); };
+	difference_type operator+(Iterator &it) const { return this->_it + it._it; }
+	difference_type operator-(Iterator &it) const { return this->_it - it._it; }
+	Iterator &operator+=(difference_type val) { this->_it += val; return *this; };
+	Iterator &operator-=(difference_type val) { this->_it -= val; return *this; };
+	const_reference operator[](const_reference n) { return this->_it[n]; };
+	pointer operator->() { return this->_it; }
+
+	bool operator==(const Iterator &other) const { return this->_it == other.getIt(); };
+	bool operator!=(const Iterator &other) const { return this->_it != other.getIt(); };
+	bool operator<=(const Iterator &other) const { return this->_it <= other.getIt(); };
+	bool operator>=(const Iterator &other) const { return this->_it >= other.getIt(); };
+	bool operator<(const Iterator &other) const { return this->_it < other.getIt(); };
+	bool operator>(const Iterator &other) const { return this->_it > other.getIt(); };
 private:
 	pointer _it;
 };
@@ -87,6 +100,12 @@ public:
 		this->_it = _it - 1;
 		return tmp;
 	}
+	bool operator==(const ConstIterator &other) const { return _it == other.getElem(); };
+	bool operator!=(const ConstIterator &other) const { return _it != other.getElem(); };
+	bool operator<=(const ConstIterator &other) const { return _it <= other.getElem(); };
+	bool operator>=(const ConstIterator &other) const { return this->_it >= other.getElem(); };
+	bool operator<(const ConstIterator &other) const { return _it < other.getElem(); };
+	bool operator>(const ConstIterator &other) const { return _it > other.getElem(); };
 private:
 	pointer _it;
 };

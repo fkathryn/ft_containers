@@ -6,17 +6,16 @@
 #define STACK_HPP
 
 #include <iostream>
-#include <vector>
+#include "Vector.hpp"
 
 namespace ft {
-	template<class T, class Container = std::vector<T> >
+	template<class T, class Container = ft::vector<T> >
 	class stack {
 		typedef T value_type;
 		typedef Container container_type;
 		typedef size_t size_type;
 
 	public:
-
 		//member function:
 		bool empty() const { return this->_container.empty(); }
 		size_type size() const { return this->_container.size(); }
