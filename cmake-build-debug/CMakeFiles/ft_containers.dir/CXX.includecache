@@ -343,8 +343,8 @@ Iterator.hpp
 /Users/fkathryn/Desktop/ft_containers/Stack.hpp
 iostream
 -
-vector
--
+Vector.hpp
+/Users/fkathryn/Desktop/ft_containers/Vector.hpp
 
 /Users/fkathryn/Desktop/ft_containers/Vector.hpp
 iostream
@@ -359,6 +359,8 @@ List.hpp
 /Users/fkathryn/Desktop/ft_containers/List.hpp
 Vector.hpp
 /Users/fkathryn/Desktop/ft_containers/Vector.hpp
+Iterator.hpp
+/Users/fkathryn/Desktop/ft_containers/Iterator.hpp
 Stack.hpp
 /Users/fkathryn/Desktop/ft_containers/Stack.hpp
 gtest/gtest.h
