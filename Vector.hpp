@@ -205,7 +205,7 @@ namespace ft {
 			this->_capacity = tmpCapacity;
 		}
 		void clear() {
-			if (size()) {
+			if (capacity()) {
 				this->_alloc.deallocate(this->_array, capacity());
 				this->_array = nullptr;
 				this->_capacity = 0;
@@ -244,9 +244,6 @@ namespace ft {
 		}
 		~vector() {
 			clear();
-			if (capacity())
-				this->_alloc.deallocate(this->_array, capacity());
-			this->_capacity = 0;
 		}
 
 	private:
