@@ -330,6 +330,10 @@ cxxabi.h
 acxx_demangle.h
 -
 
+/Users/fkathryn/Desktop/ft_containers/BidirectionalIterator.hpp
+iterator
+-
+
 /Users/fkathryn/Desktop/ft_containers/Iterator.hpp
 iterator
 -
@@ -337,8 +341,8 @@ iterator
 /Users/fkathryn/Desktop/ft_containers/List.hpp
 iostream
 -
-Iterator.hpp
-/Users/fkathryn/Desktop/ft_containers/Iterator.hpp
+BidirectionalIterator.hpp
+/Users/fkathryn/Desktop/ft_containers/BidirectionalIterator.hpp
 
 /Users/fkathryn/Desktop/ft_containers/Stack.hpp
 iostream

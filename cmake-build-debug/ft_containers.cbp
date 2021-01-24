@@ -316,6 +316,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/fkathryn/Desktop/ft_containers/BidirectionalIterator.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/Users/fkathryn/Desktop/ft_containers/Iterator.hpp">
 			<Option target="ft_containers"/>
 		</Unit>

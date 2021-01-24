@@ -21,6 +21,7 @@ CMakeFiles/ft_containers.dir/main.cpp.o: ../googletest/googletest/include/gtest/
 CMakeFiles/ft_containers.dir/main.cpp.o: ../googletest/googletest/include/gtest/internal/gtest-port.h
 CMakeFiles/ft_containers.dir/main.cpp.o: ../googletest/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/main.cpp.o: ../googletest/googletest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/ft_containers.dir/main.cpp.o: ../BidirectionalIterator.hpp
 CMakeFiles/ft_containers.dir/main.cpp.o: ../Iterator.hpp
 CMakeFiles/ft_containers.dir/main.cpp.o: ../List.hpp
 CMakeFiles/ft_containers.dir/main.cpp.o: ../Stack.hpp

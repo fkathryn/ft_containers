@@ -12,6 +12,13 @@ TEST(BasicStack, TestStack) {
 	std::stack<std::string> strStd;
 
 	EXPECT_EQ(str.empty(), strStd.empty());
+	str.pop();
+	str.push("hello");
+	strStd.push("hello");
+	EXPECT_EQ(str.top(), strStd.top());
+	EXPECT_EQ(str.empty(), strStd.empty());
+	EXPECT_EQ(str.size(), strStd.size());
+	std::cout << str.top() << std::endl;
 
 }
 
@@ -81,41 +88,24 @@ TEST(BasicVector, TestVector) {
 	v2.printVector();
 	std::cout << "size 2: " << v2.size() << " capacity: " << v2.capacity() << std::endl;
 	ft::vector<int> s(3, 15);
-	v2.insert(v2.begin() + 20, s.begin() + 1, s.end());
+//	v2.insert(v2.begin() + 20, s.begin() + 1, s.end()); need help with this shit!
 	//----------assign----------
 	v2.assign(12, 42);
 	vStd2.assign(12, 42);
 	for (int i = 0; i != vStd2.size(); i++) {
 		EXPECT_EQ(v2.at(i), vStd2.at(i));
 	}
+}
 
-
+TEST(BasicList, LIST) {
+	ft::list<int> l1(3, 21);
+	ft::list<int>::iterator itb = l1.begin();
+	ft::list<int>::iterator ite = l1.end();
+	for (; itb != ite; itb++)
+	std::cout << *itb << std::endl;
 }
 
 int main(int argc, char **argv) {
-//	ft::vector<int> myvector (3,100);
-//	ft::vector<int>::iterator it;
-//
-//	it = myvector.begin();
-//	it = myvector.insert ( it , 200 );
-//
-//	myvector.insert (it,2,300);
-//
-//	// "it" no longer valid, get a new one:
-//	it = myvector.begin();
-//
-//	ft::vector<int> anothervector (2,400);
-//	myvector.insert (it+2,anothervector.begin(),anothervector.end());
-//
-//	int myarray [] = { 501,502,503 };
-//	myvector.insert (myvector.begin(), myarray, myarray+3);
-//
-//	std::cout << "myvector contains:";
-//	for (it=myvector.begin(); it<myvector.end(); it++)
-//		std::cout << ' ' << *it;
-//	std::cout << '\n';
-//
-//	return 0;
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
