@@ -58,7 +58,7 @@ namespace ft {
 		void pop_front();
 		void push_back(const value_type & val) {
 			//create node
-			List * node = this->_allocRebind.allocate(1);
+			List* node = this->_allocRebind.allocate(1);
 			node->value = this->_alloc.allocate(1);
 			this->_alloc.construct(node->value, val);
 			this->_size++;
@@ -110,7 +110,7 @@ namespace ft {
 		}
 		template <class InputIterator>
 			list(InputIterator first, InputIterator last, const allocator_type& alloc = allocator_type(),
-				 typename enable_if<std::__is_input_iterator<InputIterator>::value>::type* = 0) : _size(0), _alloc(alloc) {
+				 typename std::enable_if<std::__is_input_iterator<InputIterator>::value>::type* = 0) : _size(0), _alloc(alloc) {
 			createList();
 			for (; first != last; first++)
 				push_back(*first);
@@ -141,20 +141,20 @@ namespace ft {
 		}
 	};
 
-//	template <class T, class Alloc>
-//		bool operator==(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-//	template <class T, class Alloc>
-//		bool operator!=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-//	template <class T, class Alloc>
-//		bool operator<(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-//	template <class T, class Alloc>
-//		bool operator<=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-//	template <class T, class Alloc>
-//		bool operator>(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-//	template <class T, class Alloc>
-//		bool operator>=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-//	template <class T, class Alloc>
-//		void swap(list<T,Alloc>& x, list<T,Alloc>& y);
+	template <class T, class Alloc>
+		bool operator==(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+	template <class T, class Alloc>
+		bool operator!=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+	template <class T, class Alloc>
+		bool operator<(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+	template <class T, class Alloc>
+		bool operator<=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+	template <class T, class Alloc>
+		bool operator>(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+	template <class T, class Alloc>
+		bool operator>=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+	template <class T, class Alloc>
+		void swap(list<T,Alloc>& x, list<T,Alloc>& y);
 }
 
 #endif //LIST_HPP

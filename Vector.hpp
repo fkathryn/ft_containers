@@ -162,17 +162,21 @@ namespace ft {
 		template<class InputIterator>
 		void insert(iterator position, InputIterator first, InputIterator last,
 			  typename enable_if<std::__is_input_iterator<InputIterator>::value>::type* = 0) {
-			difference_type ite = end().getIt() - begin().getIt();
-			difference_type elem = position.getIt() - begin().getIt();
+			iterator begin = this->begin();
+			size_type pos = position - begin;
 			size_type n = last - first;
 			reserve(size() + n);
-			for (difference_type i = ite; i >= elem; --i) {
+			for (size_type i = size(); i >= pos; --i) {
 				this->_array[i + n] = this->_array[i];
 			}
-			for (; first != last; first++, elem++) {
-				this->_alloc.construct(&this->_array[elem], *first);
+			std::cout << "1: ";
+			printVector();
+			for (size_type i = 0; i != n; first++, i++) {
+				this->_alloc.construct(&this->_array[pos + i], *first);
 				this->_size++;
 			}
+			std::cout << "2: ";
+			printVector();
 		}
 		iterator erase(iterator position) {
 			iterator last = end();
@@ -243,7 +247,7 @@ namespace ft {
 			return *this;
 		}
 		~vector() {
-			clear();
+//			clear();
 		}
 
 	private:

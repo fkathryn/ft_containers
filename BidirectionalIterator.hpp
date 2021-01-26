@@ -60,7 +60,7 @@ public:
 
 
 private:
-	List* _it;
+	pointer _it;
 };
 
 template <class T, class Alloc = std::allocator<T> >
@@ -107,7 +107,7 @@ public:
 	bool operator!=(const ConstBDIterator &other) const { return this->_it != other.getIt(); };
 
 private:
-	List* _it;
+	pointer _it;
 };
 
 #endif //FT_CONTAINERS_BIDIRECTIONALITERATOR_HPP

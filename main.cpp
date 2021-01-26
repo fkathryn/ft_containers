@@ -88,8 +88,12 @@ TEST(BasicVector, TestVector) {
 	v2.printVector();
 	std::cout << "size 2: " << v2.size() << " capacity: " << v2.capacity() << std::endl;
 	ft::vector<int> s(3, 15);
-//	v2.insert(v2.begin() + 20, s.begin() + 1, s.end()); need help with this shit!
-	//----------assign----------
+	std::vector<int> s_tmp(3, 15);
+	std::vector<int>::iterator it = s_tmp.end();
+	std::cout << "it_end = " << *(it) << std::endl;
+	v2.insert(s.begin() + 35, s_tmp.begin(), s_tmp.end()); //need help with this shit!
+//	v2.printVector();
+//	----------assign----------
 	v2.assign(12, 42);
 	vStd2.assign(12, 42);
 	for (int i = 0; i != vStd2.size(); i++) {
@@ -97,16 +101,17 @@ TEST(BasicVector, TestVector) {
 	}
 }
 
-TEST(BasicList, LIST) {
-	ft::list<int> l1(3, 21);
-	ft::list<int>::iterator itb = l1.begin();
-	ft::list<int>::iterator ite = l1.end();
-	for (; itb != ite; itb++)
-	std::cout << *itb << std::endl;
-}
+//TEST(BasicList, LIST) {
+//	ft::list<int> l1(3, 21);
+//	ft::list<int>::iterator itb = l1.begin();
+//	ft::list<int>::iterator ite = l1.end();
+//	for (; itb != ite; itb++)
+//	std::cout << *itb << std::endl;
+//}
 
 int main(int argc, char **argv) {
 	testing::InitGoogleTest(&argc, argv);
+
 	return RUN_ALL_TESTS();
 }
 
