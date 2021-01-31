@@ -85,14 +85,14 @@ TEST(BasicVector, TestVector) {
 	v2.printVector();
 	std::cout << "size 1: " << v2.size() << " capacity: " << v2.capacity() << std::endl;
 	v2.insert(v2.begin() + 5, 23, 42);
+	std::cout << "0: ";
 	v2.printVector();
 	std::cout << "size 2: " << v2.size() << " capacity: " << v2.capacity() << std::endl;
 	ft::vector<int> s(3, 15);
-	std::vector<int> s_tmp(3, 15);
-	std::vector<int>::iterator it = s_tmp.end();
-	std::cout << "it_end = " << *(it) << std::endl;
-	v2.insert(s.begin() + 35, s_tmp.begin(), s_tmp.end()); //need help with this shit!
-//	v2.printVector();
+	std::vector<int> s_tmp(3, 111);
+	v2.insert(v2.begin() + 40, s_tmp.begin(), s_tmp.end());
+	std::cout << "0: ";
+	v2.printVector();
 //	----------assign----------
 	v2.assign(12, 42);
 	vStd2.assign(12, 42);

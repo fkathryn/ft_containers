@@ -44,13 +44,6 @@ namespace ft {
 		reverse_iterator rend() { return reverse_iterator(begin()); }
 		const_reverse_iterator rend() const {return const_reference_iterator(begin()); }
 
-		//tmp method
-		void printVector() {
-			for (iterator it = begin(), ite = end(); it != ite; ++it)
-				std::cout << *it << " ";
-			std::cout << std::endl;
-		}
-
 		//capacity:
 		size_type size() const { return this->_size; }
 		size_type max_size() const { return std::numeric_limits<size_type>::max() / sizeof(*this->_array); }
@@ -169,14 +162,10 @@ namespace ft {
 			for (size_type i = size(); i >= pos; --i) {
 				this->_array[i + n] = this->_array[i];
 			}
-			std::cout << "1: ";
-			printVector();
 			for (size_type i = 0; i != n; first++, i++) {
 				this->_alloc.construct(&this->_array[pos + i], *first);
 				this->_size++;
 			}
-			std::cout << "2: ";
-			printVector();
 		}
 		iterator erase(iterator position) {
 			iterator last = end();
@@ -247,9 +236,18 @@ namespace ft {
 			return *this;
 		}
 		~vector() {
-//			clear();
+			for (int i = 0; i != size(); i++)
+				this->_alloc.destroy(&this->_array[i]);
+//			if (capacity())
+//				this->_alloc.deallocate(this->_array, capacity());
+			this->_size = 0;
+			this->_capacity = 0;
 		}
-
+		void printVector() {
+			for (iterator it = begin(), ite = end(); it != ite; ++it)
+				std::cout << *it << " ";
+			std::cout << std::endl;
+		}
 	private:
 		size_type		_size;
 		size_type		_capacity;
