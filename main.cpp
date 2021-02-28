@@ -101,13 +101,15 @@ TEST(BasicVector, TestVector) {
 	}
 }
 
-//TEST(BasicList, LIST) {
-//	ft::list<int> l1(3, 21);
-//	ft::list<int>::iterator itb = l1.begin();
-//	ft::list<int>::iterator ite = l1.end();
-//	for (; itb != ite; itb++)
-//	std::cout << *itb << std::endl;
-//}
+TEST(BasicList, LIST) {
+	ft::list<int> l1(3, 21);
+	std::cout << l1.size() << std::endl;
+	ft::list<int>::iterator itb = l1.begin();
+	ft::list<int>::iterator ite = l1.end();
+	l1.push_front(13);
+	for (; itb != ite; itb++)
+		std::cout << *itb << std::endl;
+}
 
 int main(int argc, char **argv) {
 	testing::InitGoogleTest(&argc, argv);
