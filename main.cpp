@@ -109,6 +109,8 @@ TEST(BasicList, LIST) {
 	l1.push_front(13);
 	for (; itb != ite; itb++)
 		std::cout << *itb << std::endl;
+	l1.insert(l1.begin(), 31);
+	l1.clear();
 }
 
 int main(int argc, char **argv) {

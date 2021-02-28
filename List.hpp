@@ -49,45 +49,85 @@ namespace ft {
 
 		//modifiers:
 		template <class InputIterator>
-			void assign(InputIterator first, InputIterator last);
-		void assign(size_type n, const value_type & val);
-
-
+			void assign(InputIterator first, InputIterator last) {
+				if (!empty()) {
+					clear();
+				}
+				for (; first != last; first++) {
+					push_back(*first);
+				}
+		}
+		void assign(size_type n, const value_type & val) {
+			if (!empty()) {
+				clear();
+			}
+			while (n--) {
+				push_back(val);
+			}
+		}
 		void push_front(const value_type & val) {
 			_List* node = createNode(val);
-			node->prev = this->_endNode->next;
-			node->next = this->_endNode->next->next;
+			linkNew(node, _endNode, _endNode->next);
+			_endNode->next->prev = node;
+			_endNode->next = node;
 		}
-
 		void pop_front() {
-			_List *node = this->_end_node->next;
-			node->prev = this->_endNode;
-			node->next = node->next ;
+			_List *node = _endNode->next;
+			_endNode->next = node->next;
+			node->next->prev = _endNode;
 			destroyNode(node);
 		}
 		void push_back(const value_type & val) {
 			_List* node = createNode(val);
-			node->prev = this->_endNode->prev;
-			node->next = this->_endNode;
-
+			linkNew(node, _endNode->prev, _endNode);
+			_endNode->prev->next = node;
+			_endNode->prev = node;
 		}
 		void pop_back() {
-			_List* node = this->_endNode->prev;
-			node->prev = node->prev;
-			node->next = this->_endNode;
+			_List* node = _endNode->prev;
+			_endNode->prev = node->prev;
+			node->prev->next = _endNode;
 			destroyNode(node);
 		}
-
-
-		iterator insert(iterator position, const value_type & val);
-		void insert(iterator position, size_type n, const value_type & val);
+		iterator insert(iterator position, const value_type & val) {
+			_List* node = createNode(val);
+			_List* list = position.getIt();
+			linkNew(node, list->prev, list);
+			list->prev->next = node;
+			list->prev = node;
+			return iterator(node);
+		}
+		void insert(iterator position, size_type n, const value_type & val) {
+			while (n--) {
+				insert(position, val);
+			}
+		}
 		template <class InputIterator>
-			void insert(iterator position, InputIterator first, InputIterator last);
-		iterator erase(iterator position);
-		iterator erase(iterator first, iterator last);
+			void insert(iterator position, InputIterator first, InputIterator last) {
+			for (; first != last; first++) {
+				insert(position, *first);
+			}
+		}
+		iterator erase(iterator position) {
+			_List * node = position.getIt();
+			_List * savePtrNode = node->next;
+			node->prev->next = node->next;
+			node->next->prev = node->prev;
+			destroyNode(node);
+			return iterator(savePtrNode);
+		}
+		iterator erase(iterator first, iterator last) {
+			for (; first != last; first++) {
+				erase(first);
+			}
+		}
 		void swap(list & x);
 		void resize(size_type n, value_type val = value_type());
-		void clear();
+		void clear() {
+			while (size()) {
+				pop_back();
+			}
+		}
 
 		//operations:
 		void splice(iterator position, list & x);
@@ -128,10 +168,16 @@ namespace ft {
 		}
 		list & operator=(const list & newList) {
 			for (const_iterator it = newList.begin(); it != newList.end(); it++)
-				this->push_back(*it);
+				push_back(*it);
 			return *this;
 		}
-		~list() {}
+		~list() {
+			if (!empty()) {
+				clear();
+			}
+			_alloc.deallocate(_endNode->value, 1);
+			_allocRebind.deallocate(_endNode, 1);
+		}
 
 	private:
 		typedef struct		Node {
@@ -139,13 +185,12 @@ namespace ft {
 			Node* 			prev;
 			Node* 			next;
 		}					_List;
-
-		typedef typename allocator_type::template rebind<_List>::other allocator_rebind_type;
+		_List*					_endNode;
+		size_type				_size;
 
 		allocator_type			_alloc;
+		typedef typename allocator_type::template rebind<_List>::other allocator_rebind_type;
 		allocator_rebind_type 	_allocRebind;
-		size_type				_size;
-		_List*					_endNode;
 
 		void createList() {
 			this->_endNode = this->_allocRebind.allocate(1);
@@ -160,6 +205,18 @@ namespace ft {
 			this->_alloc.construct(node->value, val);
 			this->_size++;
 			return node;
+		}
+
+		void linkNew(_List * newNode, _List * prev, _List * next) {
+			newNode->prev = prev;
+			newNode->next = next;
+		}
+
+		void destroyNode(_List* list) {
+			this->_alloc.destroy(list->value);
+			this->_alloc.deallocate(list->value, 1);
+			this->_allocRebind.deallocate(list, 1);
+			_size--;
 		}
 
 	public:
