@@ -33,7 +33,6 @@
     <list default="true" id="d90a1228-02cb-4d7b-8414-8633f9a44ab2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +194,7 @@
       <workItem from="1614631362836" duration="6336000" />
       <workItem from="1614689171576" duration="5527000" />
       <workItem from="1614758177415" duration="2626000" />
-      <workItem from="1614797344080" duration="3423000" />
+      <workItem from="1614797344080" duration="4974000" />
     </task>
     <servers />
   </component>

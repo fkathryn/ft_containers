@@ -423,19 +423,61 @@ namespace ft {
 	};
 
 	template <class T, class Alloc>
-		bool operator==(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-	template <class T, class Alloc>
-		bool operator!=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
-	template <class T, class Alloc>
-		bool operator<(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
-			
+		bool operator==(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+			typename ft::list<T, Alloc>::const_iterator lit_begin = lhs.begin();
+			typename ft::list<T, Alloc>::const_iterator lit_end = lhs.end();
+			typename ft::list<T, Alloc>::const_iterator rit_begin = rhs.begin();
+
+			if (lhs.size() != rhs.size()) {
+				return false;
+			}
+			for (; lit_begin != lit_end; ++lit_begin, ++rit_begin) {
+				if (*lit_begin != *rit_begin) {
+					return false;
+				}
+			}
+			return true;
 		}
 	template <class T, class Alloc>
-		bool operator<=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+		bool operator!=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) { return !(lhs == rhs); }
 	template <class T, class Alloc>
-		bool operator>(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+		bool operator<(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+			typename ft::list<T, Alloc>::const_iterator lit_begin = lhs.begin();
+			typename ft::list<T, Alloc>::const_iterator lit_end = lhs.end();
+			typename ft::list<T, Alloc>::const_iterator rit_begin = rhs.begin();
+			typename ft::list<T, Alloc>::const_iterator rit_end = rhs.end();
+
+			for (; lit_begin != rit_end && rit_begin != rit_end; ++lit_begin, ++rit_begin) {
+				if (*lit_begin < *rit_begin) {
+					return true;
+				}
+			}
+			if (lit_begin != rit_end) {
+				return false;
+			}
+			return (rit_begin != rit_end);
+		}
 	template <class T, class Alloc>
-		bool operator>=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+		bool operator<=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+			typename ft::list<T, Alloc>::const_iterator lit_begin = lhs.begin();
+			typename ft::list<T, Alloc>::const_iterator lit_end = lhs.end();
+			typename ft::list<T, Alloc>::const_iterator rit_begin = rhs.begin();
+			typename ft::list<T, Alloc>::const_iterator rit_end = rhs.end();
+
+			for (; lit_begin != rit_end && rit_begin != rit_end; ++lit_begin, ++rit_begin) {
+				if (*lit_begin <= *rit_begin) {
+					return true;
+				}
+			}
+			if (lit_begin != rit_end) {
+				return false;
+			}
+			return (rit_begin == rit_end);
+		}
+	template <class T, class Alloc>
+		bool operator>(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) { return !(lhs < rhs); }
+	template <class T, class Alloc>
+		bool operator>=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) { return !(lhs <= rhs); }
 	template <class T, class Alloc>
 		void swap(list<T,Alloc>& x, list<T,Alloc>& y) {
 			x.swap(y);
