@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 #include <stack>
 #include <vector>
+#include <list>
 
 TEST(BasicStack, TestStack) {
 	ft::stack<std::string> str;
@@ -103,14 +104,52 @@ TEST(BasicVector, TestVector) {
 
 TEST(BasicList, LIST) {
 	ft::list<int> l1(3, 21);
-	std::cout << l1.size() << std::endl;
+
 	ft::list<int>::iterator itb = l1.begin();
 	ft::list<int>::iterator ite = l1.end();
+
 	l1.push_front(13);
-	for (; itb != ite; itb++)
-		std::cout << *itb << std::endl;
+	l1.push_front(1222);
+//	for (; itb != ite; itb++)
+//		std::cout << *itb << std::endl;
 	l1.insert(l1.begin(), 31);
-	l1.clear();
+	l1.sort();
+	ft::list<int> l2(5, 21222);
+	l1.sort();
+	l1.merge(l2);
+	for (itb = l1.begin(); itb != l1.end(); itb++) {
+		std::cout << *itb << std::endl;
+	}
+
+	std::list<int> s1(3, 21);
+	s1.push_front(13);
+	s1.push_front(1222);
+	s1.insert(s1.begin(), 31);
+	std::list<int> s2(5, 21222);
+	s1.sort();
+	s1.merge(s2);
+	std::cout << "_____________________" << std::endl;
+	auto sitb = s1.begin();
+	for (sitb = s1.begin(); sitb != s1.end(); sitb++) {
+		std::cout << *sitb << std::endl;
+	}
+
+	std::cout << "---unique---" << std::endl;
+	l1.unique();
+	for (itb = l1.begin(); itb != l1.end(); itb++) {
+		std::cout << *itb << std::endl;
+	}
+	std::cout << "---std---" << std::endl;
+	s1.unique();
+	for (sitb = s1.begin(); sitb != s1.end(); sitb++) {
+		std::cout << *sitb << std::endl;
+	}
+
+	std::cout << "____reverse_____" << std::endl;
+	l1.reverse();
+	for (itb = l1.begin(); itb != l1.end(); itb++) {
+		std::cout << *itb << std::endl;
+	}
 }
 
 int main(int argc, char **argv) {

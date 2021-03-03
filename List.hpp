@@ -121,8 +121,29 @@ namespace ft {
 				erase(first);
 			}
 		}
-		void swap(list & x);
-		void resize(size_type n, value_type val = value_type());
+		void swap(list & x) {
+			_List * endTmp = _endNode;
+			_endNode = x._endNode;
+			x._endNode = endTmp;
+
+			size_type sizeTmp = _size;
+			_size = x._size;
+			x._size = sizeTmp;
+		}
+		void resize(size_type n, value_type val = value_type()) {
+			if (n < size()) {
+				int i = size() - n;
+				while (i--) {
+					pop_back();
+				}
+			}
+			else if (n > size()) {
+				int i = n - size();
+				while (i--) {
+					push_back(val);
+				}
+			}
+		}
 		void clear() {
 			while (size()) {
 				pop_back();
@@ -130,22 +151,107 @@ namespace ft {
 		}
 
 		//operations:
-		void splice(iterator position, list & x);
-		void splice(iterator position, list & x, iterator i);
-		void splice(iterator position, list & x, iterator first, iterator last);
-		void remove(const value_type & val);
+		void splice(iterator position, list & x) {
+			iterator i = x.begin();
+			for(; i != x.end(); i++) {
+				splice(position, x, i);
+			}
+		}
+		void splice(iterator position, list & x, iterator i) {
+			_List * node = position.getIt();
+			_List * newNode = i.getIt();
+			linkNew(newNode, node, node->next);
+			node->next->prev = newNode;
+			node->next = newNode;
+			x._size--;
+			_size++;
+		}
+		void splice(iterator position, list & x, iterator first, iterator last) {
+			for (; first != last; first++) {
+				splice(position, x, first);
+			}
+
+		}
+
+		void remove(const value_type & val) {
+			for (iterator it_b = begin(); it_b != end(); it_b++) {
+				if (*it_b == val) {
+					erase(it_b);
+				}
+			}
+		}
 		template<class Predicate>
-			void remove_if(Predicate pred);
-		void unique();
+			void remove_if(Predicate pred) {
+			for (iterator it_b = begin(); it_b != end(); it_b++) {
+				if (pred(*it_b)) {
+					erase(it_b);
+				}
+			}
+		}
+		void unique() {
+			unique(myPredicate);
+		}
 		template <class BinaryPredicate>
-			void unique(BinaryPredicate binary_pred);
-		void merge(list & x);
+			void unique(BinaryPredicate binary_pred) {
+			iterator it_b = begin();
+			iterator nextIt = ++begin();
+			while (nextIt != end()) {
+				if (binary_pred(*it_b, *nextIt))
+					nextIt = erase(nextIt);
+				else {
+					++it_b;
+					++nextIt;
+				}
+			}
+		}
+		void merge(list & x) {
+			merge(x, myCompare);
+		}
 		template <class Compare>
-			void merge(list & x, Compare comp);
-		void sort();
+			void merge(list & x, Compare comp) {
+				iterator it_begin = begin();
+				iterator it_end = end();
+				iterator x_begin = x.begin();
+				iterator x_end = x.end();
+				iterator next;
+
+				while (x.size()) {
+					if (comp(*x_begin, *it_begin) || it_begin == it_end) {
+						next = x_begin;
+						next++;
+						splice(it_begin, x, x_begin);
+						x_begin = next;
+					} else {
+						it_begin++;
+					}
+				}
+				sort();
+			}
+		void sort() {
+			sort(myCompare);
+		}
 		template <class Compare>
-			void sort (Compare comp);
-		void reverse();
+			void sort (Compare comp) {
+				iterator it_begin = begin();
+				iterator it_next = begin();
+				iterator it_end = end();
+				T* tmp;
+
+				while(++it_next != it_end) {
+					if (comp(*it_next, *it_begin)) {
+						tmp = it_begin.getIt()->value;
+						it_begin.getIt()->value = it_next.getIt()->value;
+						it_next.getIt()->value = tmp;
+						it_begin = begin();
+						it_next = begin();
+					} else {
+						it_begin++;
+					}
+				}
+			}
+		void reverse() {
+			myReverse(_endNode->next);
+		}
 
 		//constructor/destructor:
 		explicit list(const allocator_type & alloc = allocator_type()) : _size(0), _alloc(alloc) {
@@ -218,6 +324,19 @@ namespace ft {
 			this->_allocRebind.deallocate(list, 1);
 			_size--;
 		}
+
+		void myReverse(_List* node) {
+			_List * tmp = node->next;
+			node->next = node->prev;
+			node->prev = tmp;
+			if (node == _endNode) {
+				return;
+			}
+			myReverse(node->prev);
+		}
+
+		inline static bool myPredicate(const value_type & a, const value_type & b) { return a == b; }
+		inline static bool myCompare(const value_type & a, const value_type & b) { return a < b; }
 
 	public:
 		class iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
@@ -308,7 +427,9 @@ namespace ft {
 	template <class T, class Alloc>
 		bool operator!=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
 	template <class T, class Alloc>
-		bool operator<(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
+		bool operator<(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+			
+		}
 	template <class T, class Alloc>
 		bool operator<=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
 	template <class T, class Alloc>
@@ -316,7 +437,9 @@ namespace ft {
 	template <class T, class Alloc>
 		bool operator>=(const list<T,Alloc>& lhs, const list<T,Alloc>& rhs);
 	template <class T, class Alloc>
-		void swap(list<T,Alloc>& x, list<T,Alloc>& y);
+		void swap(list<T,Alloc>& x, list<T,Alloc>& y) {
+			x.swap(y);
+		}
 }
 
 #endif //LIST_HPP

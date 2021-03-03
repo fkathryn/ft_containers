@@ -64,6 +64,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
   <component name="RunManager" selected="Google Test.BasicList.LIST">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicList.LIST" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ft_containers" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ft_containers" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicList" TEST_METHOD="LIST" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -186,7 +191,11 @@
       <workItem from="1614458967704" duration="10486000" />
       <workItem from="1614506889382" duration="150000" />
       <workItem from="1614509018374" duration="6521000" />
-      <workItem from="1614527019941" duration="3678000" />
+      <workItem from="1614527019941" duration="3998000" />
+      <workItem from="1614631362836" duration="6336000" />
+      <workItem from="1614689171576" duration="5527000" />
+      <workItem from="1614758177415" duration="2626000" />
+      <workItem from="1614797344080" duration="3423000" />
     </task>
     <servers />
   </component>
