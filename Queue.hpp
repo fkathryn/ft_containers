@@ -9,7 +9,7 @@
 #include "Vector.hpp"
 
 namespace ft {
-	 template<class T, class Container = ft::vector<T> >
+	 template<class T, class Container = ft::list<T> >
 	class queue {
 		typedef T value_type;
 		typedef Container container_type;

@@ -31,8 +31,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90a1228-02cb-4d7b-8414-8633f9a44ab2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Map.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Queue.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stack.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +67,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
   <component name="RunManager" selected="Google Test.BasicList.LIST">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BasicList.LIST" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ft_containers" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ft_containers" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicList" TEST_METHOD="LIST" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -90,11 +89,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="ft_containers" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ft_containers" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ft_containers" RUN_TARGET_NAME="ft_containers">
@@ -136,8 +130,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Google Test.BasicList.LIST" />
-        <item itemvalue="CMake Application.ft_containers" />
         <item itemvalue="Google Test.BasicVector.TestVector (1)" />
+        <item itemvalue="CMake Application.ft_containers" />
         <item itemvalue="Google Test.BasicVector.TestVector" />
         <item itemvalue="Google Test.BasicStack.TestStack" />
       </list>
@@ -194,7 +188,17 @@
       <workItem from="1614631362836" duration="6336000" />
       <workItem from="1614689171576" duration="5527000" />
       <workItem from="1614758177415" duration="2626000" />
-      <workItem from="1614797344080" duration="4974000" />
+      <workItem from="1614797344080" duration="5286000" />
+      <workItem from="1614851712094" duration="2128000" />
+      <workItem from="1614870218451" duration="599000" />
+      <workItem from="1614876113209" duration="961000" />
+      <workItem from="1615099513118" duration="1057000" />
+      <workItem from="1615137383292" duration="3000" />
+      <workItem from="1615138814782" duration="9000" />
+      <workItem from="1615216327471" duration="1000" />
+      <workItem from="1615289341778" duration="7606000" />
+      <workItem from="1615302492827" duration="7109000" />
+      <workItem from="1615318727057" duration="2800000" />
     </task>
     <servers />
   </component>
