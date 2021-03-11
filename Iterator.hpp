@@ -28,10 +28,8 @@ public:
 	~Iterator() {}
 
 	pointer getIt() const { return this->_it; }
-
 	reference operator*() { return *this->_it; }
 	pointer operator->() { return this->_it; }
-
 	Iterator& operator++() {
 		this->_it++;
 		return *this;
@@ -67,6 +65,7 @@ public:
 	Iterator &operator-=(difference_type val) { this->_it -= val; return *this; };
 
 	const_reference operator[](const_reference n) { return this->_it[n]; };
+
 private:
 	pointer _it;
 };

@@ -9,13 +9,10 @@
 #include "Iterator.hpp"
 
 namespace ft {
-
 	template<bool Cond, class T = void>
 	struct enable_if {};
-
 	template <class T>
 	struct enable_if <true, T> { typedef T type; };
-
 	template<class T, class Alloc = std::allocator<T> >
 	class vector {
 	public:
@@ -260,7 +257,6 @@ namespace ft {
 			return tmp;
 		}
 	};
-
 	template <class T, class Alloc>
 		bool operator==(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs) {
 			if (lhs.size() == 0 && rhs.size() == 0)

@@ -9,7 +9,6 @@
 #include <iterator>
 
 namespace ft {
-
 	template <class T, class Alloc = std::allocator<T> >
 	class list {
 	public:
@@ -24,9 +23,6 @@ namespace ft {
 		typedef const value_type&							const_reference;
 		typedef value_type*									pointer;
 		typedef size_t										size_type;
-
-//		typedef std::reverse_iterator<iterator>				reverse_iterator;
-//		typedef std::reverse_iterator<const_iterator>		const_reverse_iterator;
 
 		//iterators:
 		iterator				begin() { return iterator(this->_endNode->next); }
@@ -175,11 +171,14 @@ namespace ft {
 		void splice(iterator position, list & x, iterator first, iterator last) {
 			_List * node = position.getIt();
 			_List * newFirstNode = first.getIt();
-			_List * newLastNode = last.getIt();
+			iterator end = --last;
+			_List * newLastNode = end.getIt();
 			newFirstNode->prev = node->prev;
 			newLastNode->next = node;
 			node->prev->next = newFirstNode;
 			node->prev = newLastNode;
+			_size += countSizeAfterSplice() - _size;
+			x._size -= countSizeAfterSplice() - _size;
 		}
 		void remove(const value_type & val) {
 			for (iterator it_b = begin(); it_b != end(); it_b++) {
@@ -233,7 +232,6 @@ namespace ft {
 						it_begin++;
 					}
 				}
-				sort();
 			}
 		void sort() {
 			sort(myCompare);
@@ -314,7 +312,6 @@ namespace ft {
 			this->_endNode->prev = this->_endNode;
 			this->_endNode->next = this->_endNode;
 		}
-
 		_List* createNode(const value_type & val) {
 			_List *node = this->_allocRebind.allocate(1);
 			node->value = this->_alloc.allocate(1);
@@ -322,19 +319,16 @@ namespace ft {
 			this->_size++;
 			return node;
 		}
-
 		void linkNew(_List * newNode, _List * prev, _List * next) {
 			newNode->prev = prev;
 			newNode->next = next;
 		}
-
 		void destroyNode(_List* list) {
 			this->_alloc.destroy(list->value);
 //			this->_alloc.deallocate(list->value, 1);
 //			this->_allocRebind.deallocate(list, 1);
 			_size--;
 		}
-
 		void myReverse(_List* node) {
 			_List * tmp = node->next;
 			node->next = node->prev;
@@ -344,12 +338,18 @@ namespace ft {
 			}
 			myReverse(node->prev);
 		}
-
+		size_type countSizeAfterSplice() {
+			size_type size = 0;
+			for (iterator it = begin(); it != end(); ++it) {
+				size++;
+			}
+			return size;
+		}
 		inline static bool myPredicate(const value_type & a, const value_type & b) { return a == b; }
 		inline static bool myCompare(const value_type & a, const value_type & b) { return a < b; }
 
 	public:
-		class iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
+		class iterator : public std::iterator<std::bidirectional_iterator_tag, value_type> {
 		public:
 			explicit iterator(_List* it = nullptr) : _it(it) {}
 			iterator(const iterator & it) { *this = it; }
@@ -389,8 +389,7 @@ namespace ft {
 		private:
 			_List* _it;
 		};
-
-		class reverse_iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
+		class reverse_iterator : public std::iterator<std::bidirectional_iterator_tag, value_type> {
 		public:
 			explicit reverse_iterator(_List* it = nullptr) : _it(it) {}
 			reverse_iterator(const reverse_iterator & it) { *this = it; }
@@ -430,7 +429,6 @@ namespace ft {
 		private:
 			_List* _it;
 		};
-
 		class const_iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
 		public:
 			explicit const_iterator(_List* it = nullptr) : _it(it) {}
@@ -471,7 +469,6 @@ namespace ft {
 		private:
 			_List* _it;
 		};
-
 		class const_reverse_iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
 		public:
 			explicit const_reverse_iterator(_List* it = nullptr) : _it(it) {}

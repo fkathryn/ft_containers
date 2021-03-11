@@ -2320,13 +2320,13 @@ TEST(BasicList, LIST) {
 	}
 
 	std::cout << "\nTest " << i++ << std::endl;
-	std::cout << "****************** Test splice list<std::string> ******************" << std::endl;
+	std::cout << "****************** Test splice(iter, &list, iter) list<std::string> ******************" << std::endl;
 
 	ft::list<std::string> myList;
 	std::list<std::string> stdList;
 	ft::list<std::string>::iterator iter = myList.begin();
 	std::list<std::string>::iterator iterOrigin = stdList.begin();
-	for (int j = 0; j != 10; j++) {
+	for (int j = 0; j != 2; j++) {
 		myList.push_back("HI!");
 		stdList.push_back("HI!");
 	}
@@ -2354,15 +2354,35 @@ TEST(BasicList, LIST) {
 	}
 
 	std::cout << "\nTest " << i++ << std::endl;
-	std::cout << "****************** Test splice list<std::string> ******************" << std::endl;
+	std::cout << "****************** Test splice(iter, &list, iter, iter) list<std::string> ******************" << std::endl;
+
+	ft::list<std::string> myList1;
+	std::list<std::string> stdList1;
+	for (int j = 0; j != 4; j++) {
+		myList1.push_back("1111");
+		stdList1.push_back("1111");
+	}
+	ft::list<std::string>::iterator iter1 = myList1.begin();
+	ft::list<std::string>::iterator iter1_end = myList1.end();
+	std::list<std::string>::iterator iterOrigin1 = stdList1.begin();
+	std::list<std::string>::iterator iterOrigin1_end = stdList1.end();
+
+	it999 = B.begin();
+	it99 = BOrigin.begin();
 
 	viewAll(B);
 	viewAllOriginal(BOrigin);
 	std::cout << "*splice*" << std::endl;
-	B.splice(++B.begin(), myList, ++myList.begin(), myList.end());
-	BOrigin.splice(++BOrigin.begin(), stdList, stdList.begin(), stdList.end());
+	B.splice(++it999, myList1, ++iter1, iter1_end);
+	BOrigin.splice(++it99, stdList1, ++iterOrigin1, iterOrigin1_end);
 	viewAll(B);
 	viewAllOriginal(BOrigin);
+
+	std::cout << "********size:*********" << std::endl;
+	std::cout << "my size: " << B.size() << std::endl;
+	std::cout << "std size: " << BOrigin.size() << std::endl;
+	std::cout << "**********************"  << std::endl;
+
 
 	if (B.size() == BOrigin.size())
 		std::cout << "✅ OK" << std::endl;
@@ -2376,39 +2396,223 @@ TEST(BasicList, LIST) {
 		mistakes++;
 	}
 
-//	std::cout << "\nTest " << i++ << std::endl;
-//	std::cout << "****************** Test splice list<std::int> ******************" << std::endl;
-//
-//	ft::list<int> myList1;
-//	std::list<int> stdList1;
-//	ft::list<int>::iterator iter1 = myList1.begin();
-//	std::list<int>::iterator iterOrigin1 = stdList1.begin();
-//	for (int j = 0; j != 10; j++) {
-//		myList1.push_back(222);
-//		stdList1.push_back(222);
-//	}
-//	it999 = A.begin();
-//	it99 = AOrigin.begin();
-//
-//	viewAll(B);
-//	viewAllOriginal(BOrigin);
-//	std::cout << "*splice*" << std::endl;
-//	B.splice(++it999, myList, ++iter);
-//	BOrigin.splice(++it99, stdList, ++iterOrigin);
-//	viewAll(B);
-//	viewAllOriginal(BOrigin);
-//
-//	if (B.size() == BOrigin.size())
-//		std::cout << "✅ OK" << std::endl;
-//	else
-//	{
-//		std::cout << "❌FALSE❌ : expected ";
-//		viewAllOriginal(BOrigin);
-//		std::cout << "received ";
-//		viewAll(B);
-//
-//		mistakes++;
-//	}
+
+	std::cout << "****************** Test splice(iter, &list) list<std::string> ******************" << std::endl;
+
+	ft::list<std::string> myList2;
+	std::list<std::string> stdList2;
+	for (int j = 0; j != 3; j++) {
+		myList2.push_back("222");
+		stdList2.push_back("222");
+	}
+
+	it999 = B.begin();
+	it99 = BOrigin.begin();
+
+	viewAll(B);
+	viewAllOriginal(BOrigin);
+	std::cout << "*splice*" << std::endl;
+	B.splice(++it999, myList2);
+	BOrigin.splice(++it99, stdList2);
+	viewAll(B);
+	viewAllOriginal(BOrigin);
+
+	std::cout << "********size:*********" << std::endl;
+	std::cout << "my size: " << B.size() << std::endl;
+	std::cout << "std size: " << BOrigin.size() << std::endl;
+	std::cout << "**********************"  << std::endl;
+
+
+	if (B.size() == BOrigin.size())
+		std::cout << "✅ OK" << std::endl;
+	else
+	{
+		std::cout << "❌FALSE❌ : expected ";
+		viewAllOriginal(BOrigin);
+		std::cout << "received ";
+		viewAll(B);
+
+		mistakes++;
+	}
+
+	std::cout << "\nTest " << i++ << std::endl;
+	std::cout << "****************** Test splice(iter, &list, iter) list<std::int> ******************" << std::endl;
+
+	ft::list<int> myListInt1;
+	std::list<int> stdListInt1;
+	ft::list<int>::iterator iterInt1 = myListInt1.begin();
+	std::list<int>::iterator iterOriginInt1 = stdListInt1.begin();
+	for (int j = 0; j != 5; j++) {
+		myListInt1.push_back(34);
+		stdListInt1.push_back(34);
+	}
+	it999A = A.begin();
+	it99A = AOrigin.begin();
+
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+	std::cout << "*splice*" << std::endl;
+	A.splice(++it999A, myListInt1, ++iterInt1);
+	AOrigin.splice(++it99A, stdListInt1, ++iterOriginInt1);
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+
+	if (B.size() == BOrigin.size())
+		std::cout << "✅ OK" << std::endl;
+	else
+	{
+		std::cout << "❌FALSE❌ : expected ";
+		viewAllOriginal(AOrigin);
+		std::cout << "received ";
+		viewAll(A);
+
+		mistakes++;
+	}
+
+	std::cout << "\nTest " << i++ << std::endl;
+	std::cout << "****************** Test splice(iter, &list, iter, iter) list<std::int> ******************" << std::endl;
+
+	ft::list<int> myListInt2;
+	std::list<int> stdListInt2;
+
+	for (int j = 0; j != 5; j++) {
+		myListInt2.push_back(13);
+		stdListInt2.push_back(13);
+	}
+
+	ft::list<int>::iterator iterInt2 = myListInt2.begin();
+	ft::list<int>::iterator iterInt2_end = myListInt2.end();
+	std::list<int>::iterator iterOriginInt2 = stdListInt2.begin();
+	std::list<int>::iterator iterOriginInt2_end = stdListInt2.end();
+
+	it999A = A.begin();
+	it99A = AOrigin.begin();
+
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+	std::cout << "*splice*" << std::endl;
+	A.splice(++it999A, myListInt2, ++iterInt2, iterInt2_end);
+	AOrigin.splice(++it99A, stdListInt2, ++iterOriginInt2, iterOriginInt2_end);
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+
+	if (B.size() == BOrigin.size())
+		std::cout << "✅ OK" << std::endl;
+	else
+	{
+		std::cout << "❌FALSE❌ : expected ";
+		viewAllOriginal(AOrigin);
+		std::cout << "received ";
+		viewAll(A);
+
+		mistakes++;
+	}
+
+	std::cout << "\nTest " << i++ << std::endl;
+	std::cout << "****************** Test splice(iter, &list) list<std::int> ******************" << std::endl;
+
+	ft::list<int> myListInt3;
+	std::list<int> stdListInt3;
+
+	for (int j = 0; j != 7; j++) {
+		myListInt3.push_back(0);
+		stdListInt3.push_back(0);
+	}
+
+	it999A = A.begin();
+	it99A = AOrigin.begin();
+
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+	std::cout << "*splice*" << std::endl;
+	A.splice(it999A, myListInt3);
+	AOrigin.splice(it99A, stdListInt3);
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+
+	if (B.size() == BOrigin.size())
+		std::cout << "✅ OK" << std::endl;
+	else
+	{
+		std::cout << "❌FALSE❌ : expected ";
+		viewAllOriginal(AOrigin);
+		std::cout << "received ";
+		viewAll(A);
+
+		mistakes++;
+	}
+
+	std::cout << "\nTest " << i++ << std::endl;
+	std::cout << "****************** Test merge list<std::string> ******************" << std::endl;
+
+	ft::list<std::string> myToMerge;
+	std::list<std::string> stdToMerge;
+	for (int j = 0; j != 3; j++) {
+		myToMerge.push_back("Merge");
+		stdToMerge.push_back("Merge");
+	}
+
+	viewAll(B);
+	viewAllOriginal(BOrigin);
+	std::cout << "*merge*" << std::endl;
+	B.merge(myToMerge);
+	BOrigin.merge(stdToMerge);
+	viewAll(B);
+	viewAllOriginal(BOrigin);
+
+	std::cout << "********size:*********" << std::endl;
+	std::cout << "my size: " << B.size() << std::endl;
+	std::cout << "std size: " << BOrigin.size() << std::endl;
+	std::cout << "**********************"  << std::endl;
+
+
+	if (B.size() == BOrigin.size())
+		std::cout << "✅ OK" << std::endl;
+	else
+	{
+		std::cout << "❌FALSE❌ : expected ";
+		viewAllOriginal(BOrigin);
+		std::cout << "received ";
+		viewAll(B);
+
+		mistakes++;
+	}
+
+	std::cout << "\nTest " << i++ << std::endl;
+	std::cout << "****************** Test merge list<int> ******************" << std::endl;
+
+	ft::list<int> myToMergeInt;
+	std::list<int> stdToMergeInt;
+	for (int j = 0; j != 3; j++) {
+		myToMergeInt.push_back(42);
+		stdToMergeInt.push_back(42);
+	}
+
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+	std::cout << "*merge*" << std::endl;
+	A.merge(myToMergeInt);
+	AOrigin.merge(stdToMergeInt);
+	viewAll(A);
+	viewAllOriginal(AOrigin);
+
+	std::cout << "********size:*********" << std::endl;
+	std::cout << "my size: " << A.size() << std::endl;
+	std::cout << "std size: " << AOrigin.size() << std::endl;
+	std::cout << "**********************"  << std::endl;
+
+
+	if (B.size() == BOrigin.size())
+		std::cout << "✅ OK" << std::endl;
+	else
+	{
+		std::cout << "❌FALSE❌ : expected ";
+		viewAllOriginal(AOrigin);
+		std::cout << "received ";
+		viewAll(A);
+
+		mistakes++;
+	}
 
 
 	std::cout << "\nMistakes=" << mistakes << std::endl;

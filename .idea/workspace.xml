@@ -31,11 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90a1228-02cb-4d7b-8414-8633f9a44ab2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Map.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/List.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Queue.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +63,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
-  <component name="RunManager" selected="Google Test.BasicList.LIST">
+  <component name="RunManager" selected="CMake Application.ft_containers">
     <configuration name="BasicList.LIST" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ft_containers" TARGET_NAME="ft_containers" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ft_containers" RUN_TARGET_NAME="ft_containers" TEST_CLASS="BasicList" TEST_METHOD="LIST" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -116,6 +113,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
@@ -129,9 +131,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="CMake Application.ft_containers" />
         <item itemvalue="Google Test.BasicList.LIST" />
         <item itemvalue="Google Test.BasicVector.TestVector (1)" />
-        <item itemvalue="CMake Application.ft_containers" />
         <item itemvalue="Google Test.BasicVector.TestVector" />
         <item itemvalue="Google Test.BasicStack.TestStack" />
       </list>
@@ -198,7 +200,9 @@
       <workItem from="1615216327471" duration="1000" />
       <workItem from="1615289341778" duration="7606000" />
       <workItem from="1615302492827" duration="7109000" />
-      <workItem from="1615318727057" duration="2800000" />
+      <workItem from="1615318727057" duration="3091000" />
+      <workItem from="1615370694880" duration="390000" />
+      <workItem from="1615451757442" duration="5178000" />
     </task>
     <servers />
   </component>
