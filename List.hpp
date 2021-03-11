@@ -24,6 +24,43 @@ namespace ft {
 		typedef value_type*									pointer;
 		typedef size_t										size_type;
 
+		//constructor/destructor:
+		explicit list(const allocator_type & alloc = allocator_type()) : _size(0), _alloc(alloc) {
+			createList();
+		}
+		explicit list(size_type n, const value_type & val = value_type(),
+					const allocator_type & alloc = allocator_type()) : _size(0), _alloc(alloc) {
+			createList();
+			while (n--)
+				push_back(val);
+		}
+		template <class InputIterator>
+		list(InputIterator first, InputIterator last, const allocator_type& alloc = allocator_type(),
+			 typename std::enable_if<std::__is_input_iterator<InputIterator>::value>::type* = 0) : _size(0), _alloc(alloc) {
+			createList();
+			for (; first != last; first++)
+				push_back(*first);
+		}
+		list(const list & newList) : _size(newList._size), _alloc(newList._alloc) {
+			createList();
+			*this = newList;
+		}
+		list & operator=(const list & newList) {
+			if (!empty()) {
+				clear();
+			}
+			for (const_iterator it = newList.begin(); it != newList.end(); it++)
+				push_back(*it);
+			return *this;
+		}
+		~list() {
+			if (!empty()) {
+				clear();
+			}
+			_alloc.deallocate(_endNode->value, 1);
+			_allocRebind.deallocate(_endNode, 1);
+		}
+
 		//iterators:
 		iterator				begin() { return iterator(this->_endNode->next); }
 		const_iterator			begin() const { return const_iterator(this->_endNode->next); }
@@ -257,42 +294,6 @@ namespace ft {
 			}
 		void reverse() { myReverse(_endNode->next); }
 
-		//constructor/destructor:
-		explicit list(const allocator_type & alloc = allocator_type()) : _size(0), _alloc(alloc) {
-			createList();
-		}
-		explicit list(size_type n, const value_type & val = value_type(), const allocator_type & alloc = allocator_type()) : _size(0), _alloc(alloc) {
-			createList();
-			while (n--)
-				push_back(val);
-		}
-		template <class InputIterator>
-			list(InputIterator first, InputIterator last, const allocator_type& alloc = allocator_type(),
-				 typename std::enable_if<std::__is_input_iterator<InputIterator>::value>::type* = 0) : _size(0), _alloc(alloc) {
-			createList();
-			for (; first != last; first++)
-				push_back(*first);
-		}
-		list(const list & newList) : _size(newList._size), _alloc(newList._alloc) {
-			createList();
-			*this = newList;
-		}
-		list & operator=(const list & newList) {
-			if (!empty()) {
-				clear();
-			}
-			for (const_iterator it = newList.begin(); it != newList.end(); it++)
-				push_back(*it);
-			return *this;
-		}
-		~list() {
-			if (!empty()) {
-				clear();
-			}
-			_alloc.deallocate(_endNode->value, 1);
-			_allocRebind.deallocate(_endNode, 1);
-		}
-
 	private:
 		typedef struct		Node {
 			value_type* 	value;
@@ -325,8 +326,6 @@ namespace ft {
 		}
 		void destroyNode(_List* list) {
 			this->_alloc.destroy(list->value);
-//			this->_alloc.deallocate(list->value, 1);
-//			this->_allocRebind.deallocate(list, 1);
 			_size--;
 		}
 		void myReverse(_List* node) {
@@ -349,7 +348,7 @@ namespace ft {
 		inline static bool myCompare(const value_type & a, const value_type & b) { return a < b; }
 
 	public:
-		class iterator : public std::iterator<std::bidirectional_iterator_tag, value_type> {
+		class iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
 		public:
 			explicit iterator(_List* it = nullptr) : _it(it) {}
 			iterator(const iterator & it) { *this = it; }
@@ -389,7 +388,7 @@ namespace ft {
 		private:
 			_List* _it;
 		};
-		class reverse_iterator : public std::iterator<std::bidirectional_iterator_tag, value_type> {
+		class reverse_iterator : public std::iterator<std::bidirectional_iterator_tag, T> {
 		public:
 			explicit reverse_iterator(_List* it = nullptr) : _it(it) {}
 			reverse_iterator(const reverse_iterator & it) { *this = it; }
